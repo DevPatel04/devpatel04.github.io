@@ -1,1 +1,0 @@
-# DevPatel.github.io
