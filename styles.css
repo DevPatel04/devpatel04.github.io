@@ -1,0 +1,404 @@
+/* ============================================
+   SAARANGA SPICE CO. — Design tokens & base
+   ============================================ */
+
+:root {
+  /* Color — warm earthy palette */
+  --color-bg: #FBF8F1;
+  --color-bg-warm: #F4ECD8;
+  --color-bg-deep: #1A1410;
+  --color-bg-deep-2: #28201A;
+  --color-ink: #1A1410;
+  --color-ink-soft: #4A4036;
+  --color-ink-mute: #8A7E6E;
+  --color-line: #E8DFD0;
+  --color-line-soft: #F0E8D8;
+
+  /* Brand */
+  --color-primary: #A11D1D;        /* chilli red */
+  --color-primary-deep: #7A1313;
+  --color-primary-soft: #C2410C;
+  --color-saffron: #D97706;
+  --color-saffron-deep: #B45309;
+  --color-turmeric: #E8A317;
+  --color-forest: #2D5F3F;
+  --color-cardamom: #6B7A3F;
+  --color-cream: #FEF3C7;
+
+  /* Type */
+  --font-serif: "Cormorant Garamond", "Times New Roman", Georgia, serif;
+  --font-sans: "Manrope", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", Menlo, monospace;
+
+  /* Spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+
+  /* Layout */
+  --max-w: 1320px;
+  --max-w-narrow: 1080px;
+  --radius: 2px;
+  --radius-md: 6px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img, svg { display: block; max-width: 100%; }
+
+a { color: inherit; text-decoration: none; }
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+.serif { font-family: var(--font-serif); font-weight: 500; letter-spacing: -0.005em; }
+.mono { font-family: var(--font-mono); }
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--color-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 24px; height: 1px;
+  background: currentColor;
+}
+
+.h-display { font-family: var(--font-serif); font-weight: 500; line-height: 0.95; letter-spacing: -0.015em; }
+.h-1 { font-family: var(--font-serif); font-weight: 500; font-size: 64px; line-height: 1.02; letter-spacing: -0.015em; }
+.h-2 { font-family: var(--font-serif); font-weight: 500; font-size: 48px; line-height: 1.05; letter-spacing: -0.012em; }
+.h-3 { font-family: var(--font-serif); font-weight: 500; font-size: 32px; line-height: 1.1; letter-spacing: -0.005em; }
+.h-4 { font-family: var(--font-serif); font-weight: 500; font-size: 24px; line-height: 1.2; }
+
+.lead { font-size: 18px; line-height: 1.6; color: var(--color-ink-soft); }
+.body { font-size: 15px; line-height: 1.65; color: var(--color-ink-soft); }
+.small { font-size: 13px; line-height: 1.5; color: var(--color-ink-mute); }
+
+/* ============================================
+   LAYOUT
+   ============================================ */
+.container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.container-narrow {
+  max-width: var(--max-w-narrow);
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.section {
+  padding: var(--space-10) 0;
+}
+.section-tight { padding: var(--space-8) 0; }
+
+.section-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: end;
+  margin-bottom: 64px;
+}
+
+.divider {
+  height: 1px;
+  background: var(--color-line);
+  border: none;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 24px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+  border-radius: var(--radius);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.btn-primary {
+  background: var(--color-primary);
+  color: #FBF8F1;
+}
+.btn-primary:hover {
+  background: var(--color-primary-deep);
+  transform: translateY(-1px);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--color-ink);
+  border: 1px solid var(--color-ink);
+}
+.btn-outline:hover {
+  background: var(--color-ink);
+  color: var(--color-bg);
+}
+.btn-outline-light {
+  background: transparent;
+  color: #FBF8F1;
+  border: 1px solid rgba(251, 248, 241, 0.5);
+}
+.btn-outline-light:hover {
+  background: #FBF8F1;
+  color: var(--color-ink);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--color-primary);
+  padding: 0;
+  text-transform: none;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  font-weight: 600;
+}
+.btn-ghost::after {
+  content: "→";
+  font-family: var(--font-serif);
+  font-size: 18px;
+  transition: transform 0.2s;
+}
+.btn-ghost:hover::after { transform: translateX(4px); }
+
+.btn-large { padding: 18px 32px; font-size: 13px; }
+
+/* ============================================
+   FLOATING ACTIONS
+   ============================================ */
+.float-actions {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 90;
+}
+.float-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-ink);
+  color: var(--color-bg);
+  box-shadow: 0 8px 24px rgba(26, 20, 16, 0.18);
+  transition: transform 0.2s;
+  font-family: var(--font-sans);
+  font-size: 24px;
+  position: relative;
+}
+.float-btn-whatsapp { background: #25D366; color: white; }
+.float-btn-call { background: var(--color-primary); color: white; }
+.float-btn:hover { transform: scale(1.08); }
+
+.float-tooltip {
+  position: absolute;
+  right: 70px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--color-ink);
+  color: var(--color-bg);
+  padding: 8px 14px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  font-family: var(--font-sans);
+}
+.float-btn:hover .float-tooltip { opacity: 1; }
+
+/* ============================================
+   PLACEHOLDER IMAGES (striped + gradient)
+   ============================================ */
+.ph {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-bg-warm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(26, 20, 16, 0.5);
+  text-align: center;
+  padding: 16px;
+}
+.ph::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent 0 12px,
+    rgba(26, 20, 16, 0.04) 12px 13px
+  );
+  pointer-events: none;
+}
+.ph-label {
+  position: relative;
+  z-index: 1;
+  background: var(--color-bg);
+  padding: 6px 10px;
+  border: 1px solid var(--color-line);
+}
+
+/* Tinted gradient blocks — spice colors */
+.spice-block {
+  position: relative;
+  overflow: hidden;
+}
+.spice-chilli { background: radial-gradient(circle at 30% 30%, #C53030, #7A1313 70%); }
+.spice-turmeric { background: radial-gradient(circle at 30% 30%, #F4B028, #B45309 70%); }
+.spice-cumin { background: radial-gradient(circle at 30% 30%, #A0522D, #5D2906 70%); }
+.spice-coriander { background: radial-gradient(circle at 30% 30%, #C9B271, #7A6230 70%); }
+.spice-pepper { background: radial-gradient(circle at 30% 30%, #4A3A2A, #1A0F08 70%); }
+.spice-cardamom { background: radial-gradient(circle at 30% 30%, #9CAB6A, #4F5C2E 70%); }
+.spice-cinnamon { background: radial-gradient(circle at 30% 30%, #B5651D, #6B3410 70%); }
+.spice-clove { background: radial-gradient(circle at 30% 30%, #6B4423, #2F1810 70%); }
+.spice-fennel { background: radial-gradient(circle at 30% 30%, #B4B27A, #6F6D3F 70%); }
+.spice-fenugreek { background: radial-gradient(circle at 30% 30%, #D4B45A, #8A7320 70%); }
+.spice-mustard { background: radial-gradient(circle at 30% 30%, #E6B143, #A07820 70%); }
+.spice-staranise { background: radial-gradient(circle at 30% 30%, #8B4513, #3E1E08 70%); }
+.spice-nutmeg { background: radial-gradient(circle at 30% 30%, #9B6B3C, #5A3A1A 70%); }
+.spice-garam { background: radial-gradient(circle at 30% 30%, #8B3A0E, #3E1A05 70%); }
+.spice-tandoori { background: radial-gradient(circle at 30% 30%, #C44521, #7A1A0A 70%); }
+.spice-curry { background: radial-gradient(circle at 30% 30%, #D9A441, #8B5A1F 70%); }
+.spice-bay { background: radial-gradient(circle at 30% 30%, #4A5D3A, #1E2A18 70%); }
+.spice-ginger { background: radial-gradient(circle at 30% 30%, #D9A86A, #8A5C2A 70%); }
+.spice-chaat { background: radial-gradient(circle at 30% 30%, #A87C45, #5A3E1A 70%); }
+
+/* Speckled texture overlay for spice blocks */
+.spice-block::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 18% 24%, rgba(0,0,0,0.32) 1.2px, transparent 2.2px),
+    radial-gradient(circle at 72% 58%, rgba(0,0,0,0.26) 1.2px, transparent 2.2px),
+    radial-gradient(circle at 38% 82%, rgba(0,0,0,0.22) 1.2px, transparent 2.2px),
+    radial-gradient(circle at 86% 18%, rgba(255,255,255,0.18) 1px, transparent 2px),
+    radial-gradient(circle at 14% 68%, rgba(255,255,255,0.14) 1px, transparent 2px),
+    radial-gradient(circle at 55% 35%, rgba(0,0,0,0.18) 0.8px, transparent 1.6px),
+    radial-gradient(circle at 28% 50%, rgba(255,255,255,0.10) 0.8px, transparent 1.6px);
+  background-size: 64px 64px, 82px 82px, 50px 50px, 96px 96px, 72px 72px, 42px 42px, 56px 56px;
+  pointer-events: none;
+}
+
+/* ============================================
+   CARDS
+   ============================================ */
+.card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-line);
+  transition: all 0.25s ease;
+}
+.card:hover {
+  border-color: var(--color-ink);
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+
+/* ============================================
+   UTILITIES
+   ============================================ */
+.grid { display: grid; }
+.flex { display: flex; }
+.text-center { text-align: center; }
+.uppercase { text-transform: uppercase; letter-spacing: 0.08em; }
+.tabular { font-variant-numeric: tabular-nums; }
+
+/* Dark surface */
+.surface-dark {
+  background: var(--color-bg-deep);
+  color: var(--color-bg);
+}
+.surface-dark .body { color: rgba(251, 248, 241, 0.7); }
+.surface-dark .small { color: rgba(251, 248, 241, 0.55); }
+.surface-dark .eyebrow { color: var(--color-saffron); }
+
+.surface-warm {
+  background: var(--color-bg-warm);
+}
+
+/* Hide scrollbars on horizontal scrollers */
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+/* Responsive nudges */
+@media (max-width: 1100px) {
+  .hide-md { display: none !important; }
+}
+@media (max-width: 960px) {
+  .h-1 { font-size: 44px; }
+  .h-2 { font-size: 36px; }
+  .h-3 { font-size: 26px; }
+  .section { padding: var(--space-8) 0; }
+  .section-header { grid-template-columns: 1fr; gap: 24px; }
+}

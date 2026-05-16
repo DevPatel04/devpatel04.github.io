@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Saaranga Spice Co. — Premium Indian Spice Exporters · 32 Countries</title>
-  <meta name="description" content="Saaranga Spice Co. — third-generation Indian spice exporter from Unjha, Gujarat. FSSAI, APEDA, ISO 22000, HACCP certified. 36 SKUs, 32 countries, 5,400 MT/yr." />
+  <title>Red Chilli Whole — Exporter & Supplier · Saaranga Spice Co.</title>
+  <meta name="description" content="Premium Indian red chilli whole — S17 Teja, Sanam, Byadgi & Guntur varieties. SHU 15,000–100,000, EU-MRL compliant, FSSAI & APEDA certified. MOQ 1 MT." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,7 +12,6 @@
 
   <link rel="stylesheet" href="styles.css" />
   <style>
-    /* Page-specific responsive tweaks */
     @media (max-width: 1180px) {
       .nav-links { gap: 0 !important; }
       .nav-links a { padding: 10px 9px !important; font-size: 12px !important; }
@@ -20,26 +19,18 @@
     @media (max-width: 1024px) {
       .nav-links { display: none !important; }
       .nav-mobile-trigger { display: flex !important; }
-      .hero-split { grid-template-columns: 1fr !important; gap: 32px !important; padding: 56px 20px !important; min-height: auto !important; }
-      .hero-split > div:nth-child(2) { max-height: 460px !important; }
     }
     @media (max-width: 1100px) {
-      .featured-grid { grid-template-columns: repeat(2, 1fr) !important; }
-      .stats-grid { grid-template-columns: repeat(3, 1fr) !important; gap: 24px !important; }
-      .stats-grid > div:nth-child(n+4) { border-left: none !important; }
-      .certs-grid { grid-template-columns: repeat(4, 1fr) !important; }
-      .certs-grid > a { border-right: 1px solid var(--color-line) !important; border-bottom: 1px solid var(--color-line) !important; }
-      .global-grid { grid-template-columns: 1fr !important; }
-      .about-grid { grid-template-columns: 1fr !important; gap: 56px !important; }
-      .cat-grid, .blog-grid { grid-template-columns: 1fr !important; }
-      .why-grid { grid-template-columns: repeat(2, 1fr) !important; }
-      .process-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 40px !important; }
-      .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 40px !important; }
+      .product-hero-grid, .product-main-grid, .pack-grid, .spec-grid, .origin-grid, .inquiry-grid {
+        grid-template-columns: 1fr !important;
+        gap: 48px !important;
+      }
+      .related-grid { grid-template-columns: repeat(3, 1fr) !important; }
     }
     @media (max-width: 720px) {
       .hide-sm { display: none !important; }
-      .featured-grid, .why-grid, .process-grid, .footer-grid { grid-template-columns: 1fr !important; }
       .container { padding: 0 20px !important; }
+      .related-grid { grid-template-columns: repeat(2, 1fr) !important; }
     }
   </style>
 </head>
@@ -52,10 +43,8 @@
   <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 
   <script type="text/babel" src="src/shared.jsx"></script>
-  <script type="text/babel" src="src/home-top.jsx"></script>
-  <script type="text/babel" src="src/home-bottom.jsx"></script>
   <script type="text/babel" src="src/tweaks-panel.jsx"></script>
   <script type="text/babel" src="src/saaranga-tweaks.jsx"></script>
-  <script type="text/babel" src="src/home-app.jsx"></script>
+  <script type="text/babel" src="src/product-page.jsx"></script>
 </body>
 </html>
